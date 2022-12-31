@@ -231,15 +231,3 @@ class CBN1D(nn.Module):
             self.running_var.data[self.active_task, :] = running_var.data
 
         return out
-
-
-if __name__ == '__main__':
-    model = CBN1D(5, 128).cuda()
-    x = torch.ones([4, 128])
-    x = Variable(x.cuda())
-
-    model.eval()
-    print(model(x))
-
-    # print(model.state_dict)
-    # print(model.cbn_is_training)
